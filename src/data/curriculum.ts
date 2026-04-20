@@ -27,6 +27,22 @@ export const CURRICULUM: SubjectDef[] = [
               { id: 'kokugo-kotoba-hantaigo-2', label: '反対語②', grade: 2 },
             ],
           },
+          {
+            id: 'kokugo-kotoba-okurigana',
+            label: '送り仮名',
+            quizSets: [
+              { id: 'kokugo-kotoba-okurigana-1', label: '送り仮名①', grade: 2 },
+              { id: 'kokugo-kotoba-okurigana-2', label: '送り仮名②', grade: 2 },
+            ],
+          },
+          {
+            id: 'kokugo-kotoba-katakana',
+            label: 'カタカナ',
+            quizSets: [
+              { id: 'kokugo-kotoba-katakana-1', label: 'カタカナ①', grade: 2 },
+              { id: 'kokugo-kotoba-katakana-2', label: 'カタカナ②', grade: 2 },
+            ],
+          },
         ],
       },
       {
@@ -49,6 +65,14 @@ export const CURRICULUM: SubjectDef[] = [
               { id: 'kokugo-kanji-3nen-2', label: '3年生②', grade: 3 },
             ],
           },
+          {
+            id: 'kokugo-kanji-ana',
+            label: '漢字の穴埋め',
+            quizSets: [
+              { id: 'kokugo-kanji-ana-1', label: '穴埋め①', grade: 2 },
+              { id: 'kokugo-kanji-ana-2', label: '穴埋め②', grade: 3 },
+            ],
+          },
         ],
       },
       {
@@ -61,6 +85,28 @@ export const CURRICULUM: SubjectDef[] = [
             quizSets: [
               { id: 'kokugo-bunsho-yomitori-1', label: '読み取り①', grade: 2 },
               { id: 'kokugo-bunsho-yomitori-2', label: '読み取り②', grade: 3 },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'kokugo-bun',
+        label: '文の組み立て',
+        categories: [
+          {
+            id: 'kokugo-bun-shugo',
+            label: '主語・述語',
+            quizSets: [
+              { id: 'kokugo-bun-shugo-1', label: '主語・述語①', grade: 2 },
+              { id: 'kokugo-bun-shugo-2', label: '主語・述語②', grade: 3 },
+            ],
+          },
+          {
+            id: 'kokugo-bun-tsunagi',
+            label: 'つなぎ言葉',
+            quizSets: [
+              { id: 'kokugo-bun-tsunagi-1', label: 'つなぎ言葉①', grade: 2 },
+              { id: 'kokugo-bun-tsunagi-2', label: 'つなぎ言葉②', grade: 3 },
             ],
           },
         ],
@@ -86,6 +132,14 @@ export const CURRICULUM: SubjectDef[] = [
             ],
           },
           {
+            id: 'sansu-keisan-hissan',
+            label: 'ひっ算',
+            quizSets: [
+              { id: 'sansu-keisan-hissan-1', label: 'ひっ算①', grade: 2 },
+              { id: 'sansu-keisan-hissan-2', label: 'ひっ算②', grade: 2 },
+            ],
+          },
+          {
             id: 'sansu-keisan-kuku',
             label: '九九・かけ算',
             quizSets: [
@@ -99,6 +153,44 @@ export const CURRICULUM: SubjectDef[] = [
             quizSets: [
               { id: 'sansu-keisan-wari-1', label: '割り算①', grade: 3 },
               { id: 'sansu-keisan-wari-2', label: '割り算②', grade: 3 },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'sansu-okisa',
+        label: '数と大きさ',
+        categories: [
+          {
+            id: 'sansu-okisa-ogakazu',
+            label: '大きな数',
+            quizSets: [
+              { id: 'sansu-okisa-ogakazu-1', label: '大きな数①', grade: 2 },
+              { id: 'sansu-okisa-ogakazu-2', label: '大きな数②', grade: 2 },
+            ],
+          },
+          {
+            id: 'sansu-okisa-tokei',
+            label: '時刻',
+            quizSets: [
+              { id: 'sansu-okisa-tokei-1', label: '時刻①', grade: 2 },
+              { id: 'sansu-okisa-tokei-2', label: '時刻②', grade: 2 },
+            ],
+          },
+          {
+            id: 'sansu-okisa-kasa',
+            label: '水のかさ',
+            quizSets: [
+              { id: 'sansu-okisa-kasa-1', label: '水のかさ①', grade: 2 },
+              { id: 'sansu-okisa-kasa-2', label: '水のかさ②', grade: 2 },
+            ],
+          },
+          {
+            id: 'sansu-okisa-nagasa',
+            label: '長さ',
+            quizSets: [
+              { id: 'sansu-okisa-nagasa-1', label: '長さ①', grade: 2 },
+              { id: 'sansu-okisa-nagasa-2', label: '長さ②', grade: 2 },
             ],
           },
         ],
