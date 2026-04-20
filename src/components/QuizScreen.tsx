@@ -18,7 +18,6 @@ export default function QuizScreen({ quizSetId, quizSetLabel, subjectColor, onAl
   const [phase, setPhase] = useState<Phase>('question')
   const [correctCount, setCorrectCount] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
-  const [stampEarned, setStampEarned] = useState(false)
 
   useEffect(() => {
     setQuestions(getQuestions(quizSetId))
@@ -26,7 +25,6 @@ export default function QuizScreen({ quizSetId, quizSetLabel, subjectColor, onAl
     setPhase('question')
     setCorrectCount(0)
     setSelected(null)
-    setStampEarned(false)
   }, [quizSetId])
 
   if (questions.length === 0) return null
@@ -41,7 +39,6 @@ export default function QuizScreen({ quizSetId, quizSetLabel, subjectColor, onAl
       const newCorrect = correctCount + 1
       setCorrectCount(newCorrect)
       if (current + 1 >= total && newCorrect === total) {
-        setStampEarned(true)
         onAllCorrect()
       }
       setPhase('correct')
@@ -107,7 +104,6 @@ export default function QuizScreen({ quizSetId, quizSetLabel, subjectColor, onAl
                   setPhase('question')
                   setCorrectCount(0)
                   setSelected(null)
-                  setStampEarned(false)
                 }}
                 style={{ flex: 1, borderRadius: 20, padding: '12px', fontWeight: 'bold', fontSize: 14, color: 'white', background: subjectColor, border: 'none', cursor: 'pointer' }}
               >
