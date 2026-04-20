@@ -4,6 +4,10 @@ import type { GenreDef } from './types'
 
 const STORAGE_KEY = 'gakushu-app-v2'
 
+function localDateStr(d: Date = new Date()): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+
 export function defaultState(): AppState {
   return { stamps: {}, stampHistory: [] }
 }
@@ -25,7 +29,7 @@ function saveState(state: AppState): void {
 export function earnStamp(state: AppState, quizSetId: string): AppState {
   if (state.stamps[quizSetId]) return state  // already earned
 
-  const today = new Date().toISOString().slice(0, 10)
+  const today = localDateStr()
   const history = [...state.stampHistory]
   const idx = history.findIndex(h => h.date === today)
   if (idx >= 0) history[idx] = { ...history[idx], count: history[idx].count + 1 }
@@ -57,7 +61,7 @@ export function getTotalStamps(state: AppState): number {
 }
 
 export function getTodayStamps(state: AppState): number {
-  const today = new Date().toISOString().slice(0, 10)
+  const today = localDateStr()
   return state.stampHistory.find(h => h.date === today)?.count ?? 0
 }
 
@@ -66,7 +70,7 @@ export function getWeekHistory(state: AppState): { day: string; count: number }[
   return Array.from({ length: 7 }, (_, i) => {
     const d = new Date()
     d.setDate(d.getDate() - (6 - i))
-    const dateStr = d.toISOString().slice(0, 10)
+    const dateStr = localDateStr(d)
     return { day: days[d.getDay()], count: state.stampHistory.find(h => h.date === dateStr)?.count ?? 0 }
   })
 }
